@@ -1,0 +1,115 @@
+body {
+    display: inline-block;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.large-game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 40px;
+    height: 700px;
+    width: 700px;
+}
+
+.largeGameCell {
+    border: 4px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.activeLargeGameCell {
+    border: 4px dotted white;
+}
+
+
+.small-game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 140px;
+    height: 140px;
+    background-color: #FCCB06;
+}
+
+.small-game-cell {
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.player-wins {
+    border: 4px solid blue;
+}
+
+.computer-wins {
+    border: 4px solid red;
+}
+
+.game-draw {
+    border: 4px solid grey;
+}
+
+.game-status {
+    margin-top: 30px;
+    color: white;
+    background-color: #0047AB;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    width: 600px;
+    height: 25px;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+
+.startBtn {
+    width: 100px;
+    height: 40px;
+    background-color: #008080;
+    margin-right: 15px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.resetBtn {
+    width: 100px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: #008080;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #adadad;
+    color: white;
+    cursor: none;
+}
