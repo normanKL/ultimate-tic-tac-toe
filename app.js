@@ -61,14 +61,14 @@ displayGridLargeGame()
 
 //start game function
 
-resetBtn.disabled = false
-
 startBtn.addEventListener('click', startGame)
+resetBtn.disabled = true
 
 function startGame() {
     running = true
     gameStatus.textContent = `Player ${currentPlayer}, click any cell to begin your move!`
     startBtn.disabled = true
+    resetBtn.disabled = false
 }
 
 
@@ -179,7 +179,6 @@ function computerMove() {
         if (!checkLargeGameWinner()) {
             activeLargeGameCellIndex = null
             currentPlayer = player
-            // gameStatus.textContent = `It's Player ${currentPlayer}'s turn`
         }
     } else if (smallGameCells.every(cell => cell.textContent !== '')) {
         gameStatus.textContent = `It's a draw!`
@@ -188,7 +187,6 @@ function computerMove() {
         if (!checkLargeGameWinner()) {
             activeLargeGameCellIndex = null
             currentPlayer = player
-            // gameStatus.textContent = `It's Player ${currentPlayer}'s turn`
         }
     } else {
         activeLargeGameCellIndex = parseInt(cell.getAttribute('small-game-data-index'))
@@ -204,7 +202,6 @@ function computerMove() {
     }
 
 }
-
 
 // smaller game - check winner
 
@@ -254,6 +251,7 @@ resetBtn.addEventListener('click', () => {
         cell.querySelectorAll('.small-game-cell').forEach(cell => cell.textContent = '')
     })
     startBtn.disabled = false
+    resetBtn.disabled = true
     gameStatus.textContent = 'Game reset. Click Start button to begin.'
 })
 
